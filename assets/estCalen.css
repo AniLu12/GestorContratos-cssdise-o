@@ -1,0 +1,101 @@
+/*Estilos opcion calendario, titulo y contenido*/
+.posTituloCalen {
+  font-family: "Josefin Sans", sans-serif;
+  color: #03497a;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+label {
+  font-family: "Raleway", sans-serif;
+  color: #03497a;
+  text-transform: uppercase;
+  font-size: 0.856rem;
+  font-weight: 400;
+}
+
+/*Grid con el calendario, la tabla con las obligaciones del mes*/
+.calenGrid{
+  display: grid;        /*Modo grid*/
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 0;
+  padding: 10px;
+  overflow-y: auto;     /*Habilita scroll vertical si se rebasa */
+  max-height: 96%;      /*Definir la altura de la tabla*/
+  row-gap: 0px;         /*Sin espacio entre filas*/
+  column-gap: 0px;      /*Sin espacio entre columnas*/
+  align-self: start;    /*Se alinea al inicio*/
+  justify-self: start;  /*Justificado al inicio, para evitar que el contenido se autoajuste si es muy pequeño*/
+  width: 97%;           /*Tamaño de lado*/
+}
+
+
+/*Grid de toda la opción calendario*/
+.calenGridGeneral{
+  background: transparent;
+  padding: 10px;       /*Margen interior*/
+  display: grid;      /*Modo grid*/
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr; 
+  height: 96%;        /*Definir la altura de la tabla*/
+  gap: 10px;          /*Espacio entre objetos*/
+  flex: 1;
+  min-height: 0;
+}
+
+/*container del titulo y el selector*/
+.calenEncabezado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/*Posicionamiento de objetos en el grid de calendario (Labels y botones)*/
+/*Selector de fechas*/
+.posLabFecha{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.selectorFecha {
+  background: transparent;
+  color: #03487ac5;
+  border: 1px solid #03487ac5;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 16px;
+  min-width: 150px;
+  box-sizing: border-box;
+}
+
+/*Calendario*/
+.posCalen{
+  grid-column: 1;
+  grid-row: 2;
+  overflow-y: auto;
+  padding: 8px;
+  width: 97%;
+  margin-top: -10px;
+}
+
+.posTituloCalen{
+  grid-column: 1 / span 14;
+  grid-row: 1 / span 1;
+}
+
+
+/*Estos ya no se usaron xd*/
+.posBotIzq{
+  grid-column: 2 / span 3;
+  grid-row: 3 / span 1;
+}
+
+.posBotDer{
+  grid-column: 13 / span 3;
+  grid-row: 3 / span 1;
+}

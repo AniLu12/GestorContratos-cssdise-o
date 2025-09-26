@@ -1,0 +1,323 @@
+/*Menú inicio*/
+/*container para el layout completo, forma de grid*/
+.layoutCompleto {
+  display: grid;
+  margin: 15px;
+  gap: 5px;
+  grid-template-columns: 220px 1fr; /*menú op y el containerinfo */
+  grid-template-rows: 60px 1fr auto;
+  grid-template-areas:
+                "header header"
+                "menu main"
+                "footer footer";
+  box-sizing: border-box;
+}
+
+
+/*Header+logo+titulo*/
+header {
+  grid-area: header;
+  position: sticky;
+  top: 0; /*para que ocupe el top de la pantalla*/
+  background: #ffffff;
+  width: 100%;
+  height: 50px;
+  display: grid;
+  z-index: 1000;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  width: 120px;
+  height: auto;
+  text-align: center;
+}
+
+.titulo {
+  font-family: "Josefin Sans", sans-serif;
+  color: #2c73b6;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Contenedor global de menu op y containerInfo*/
+.menuInicioBox {
+  grid-area: menu;
+  padding-top: 0px;    /*Para evitar ecimar el contenido en el header*/
+  width: 220px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;           /*espacio separador de menuop y containerInfo */
+}
+
+/*Sección del menú de op, dentro de el la caja de botones*/
+section {
+  position: sticky;
+  top: 70px;
+  max-width: 150px;
+  border: 2px solid #03487a8a;
+  border-radius: 20px;
+  background: #03497a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  flex-grow: 0;
+}
+
+/*Caja con los 5 botones y cierre de sesión*/
+.boxOpciones {
+  padding: 4px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr auto;
+  gap: 1rem;          /*Espacio entre btns*/
+  flex: 1;
+}
+
+.logOutIcon {
+  color: #ffffff;
+}
+
+.containerInfo {
+  grid-area: main;
+  max-width: 100%;
+  border: 2px solid #2c73b6;
+  border-radius: 20px;
+  background: #ffffff;
+  overflow-y: hidden;
+  padding: 2rem 3rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  box-sizing: border-box;
+  grid-template-rows: 1fr;
+}
+
+/*Estos dos son para mostrar o no msotrar las opciones, según yo, estos no se deben de tocar*/
+.panel {
+  display: none;
+  width: 100%;
+}
+.panel.activo {
+  display: block;  
+}
+
+/* Botones opciones */
+/*Botón sin seleccionar*/
+.opcion {
+  width: 150px;
+  height: 50px;
+  border-radius: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;  /*Para que se ponga la manita esa con el ratón encima del botón*/
+  outline: none;
+  font-size: 0.9rem;
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+  font-weight: 350;
+  transition: all 0.1s ease;
+}
+
+/*al poner el cursor encima de los btn*/
+.opcion:hover {
+  background: transparent;
+  border-bottom: 1.5px solid #2c73b6;
+  border-left: 0.5px solid #2c73b6;
+}
+
+/*Cómo se verá el botón activo, sólamente le cambié el background y el color del texto, el resto es igual*/
+.opcion.active {
+  background: #ffffffbf;
+  font-weight: 650;
+  color: #2c73b6;
+}
+
+/*Estilo para el botón de cerrar sesión*/
+.btnOut {
+  cursor: pointer;
+  border: none;
+  margin-top: 3px;
+  margin-bottom: -10px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnOut:hover .logOutIcon {
+  transform: translateY(-3px); /*efecto de elevarlo*/
+  color: #ffffffbf;
+}
+
+.btnOut:active {
+  transform: translateX(3px);
+}
+
+/*Centrador de objetos, centra horizontalmente y pone hasta arriba (verticalmente) */
+/*Creo que ni lo uso jaja*/
+.centrarArriba {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+footer {
+  grid-area: footer;
+  bottom: 0;
+  background: transparent;
+  color: #03497a;
+  font-family: "Raleway", sans-serif;
+  justify-content: center;
+  width: 100%;
+  font-size: smaller;
+  height: 30px;
+  display: flex;
+  z-index: 1000;
+  margin-top: 0;
+}
+
+/*Estilos del box de encabezados para waiver*/
+.encabezadoWaiver {
+  background: transparent;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 6px;
+  color: #03497a;
+}
+
+.encabezadoDate {
+  background: transparent;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-align: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 6px;
+  color: #03497a;
+}
+
+/*Estilos para las celdas y encabezados de las tablas (excepto las celdas de clausulas y contratos)*/
+.encabezado {
+  background: transparent;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 6px;
+  color: #03497a;
+  border: 1px solid #2c73b6;
+}
+
+.celda {
+  background: transparent;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  text-align: justify;
+  font-size: smaller;
+  padding: 6px;
+  color: #03497a;
+  border: 1px solid #2c73b6;
+}
+
+/*encabezado estilizado para contratos*/
+.encabezadoCon {
+  background: transparent;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: justify;
+  font-size: 0.8rem;
+  padding: 8px;
+  color: #03497a;
+  border: 1.3px solid rgba(152, 198, 244, 0.953);
+  border-radius: 9px;
+  letter-spacing: 15%;
+  margin-bottom: 10px;
+}
+
+/*celdas estilizadas para menú-contratos*/
+.celdaCon {
+  text-align: justify;
+  font-size: 13px;
+  display: block;
+  padding: 10px;
+}
+
+.aCon {
+  background: transparent;
+  text-align: justify;
+  background-color: #4c92d347;
+  border-radius: 9px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  color: #03497a;
+  margin-bottom: 10px;
+  transition: all 0.2s ease-in;
+}
+
+.aCon:hover {
+  transform: translateX(6px);
+}
+
+/*celdas estilizadas para clausulas*/
+.celdaClaus {
+  text-align: center;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.aClaus {
+  background: #2c73b628;
+  padding: 3px;
+  flex: 1;
+  display: flex;
+  border: 1.2px solid #03487a8a;
+  border-radius: 8px;
+  color: #03497a;
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+  display: block;
+  transition: all 0.2s ease-in-out;
+}
+
+.aClaus:hover {
+  background: transparent;
+}
+
+/*Estilo para clausulas de waivers*/
+.celdaClausula {
+  text-align: justify;
+  font-size: smaller;
+  padding: 6px;
+  background: #2c73b628;
+  border-radius: 8px;
+  color: #03497a;
+  border: 1px solid #2c73b6;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
