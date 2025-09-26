@@ -130,7 +130,8 @@ section {
 /*al poner el cursor encima de los btn*/
 .opcion:hover {
   background: transparent;
-  border-bottom: 1px solid #2c73b6;
+  border-bottom: 1.5px solid #2c73b6;
+  border-left: 0.5px solid #2c73b6;
 }
 
 /*Cómo se verá el botón activo, sólamente le cambié el background y el color del texto, el resto es igual*/
@@ -188,6 +189,31 @@ footer {
   margin-top: 0;
 }
 
+/*Estilos del box de encabezados para waiver*/
+.encabezadoWaiver {
+  background: transparent;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 6px;
+  color: #03497a;
+}
+
+.encabezadoDate {
+  background: transparent;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-align: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 6px;
+  color: #03497a;
+}
+
 /*Estilos para las celdas y encabezados de las tablas (excepto las celdas de clausulas y contratos)*/
 .encabezado {
   background: transparent;
@@ -222,13 +248,13 @@ footer {
   font-size: 0.8rem;
   padding: 8px;
   color: #03497a;
-  border: 1.3px solid rgba(149, 176, 203, 0.953);
+  border: 1.3px solid rgba(152, 198, 244, 0.953);
   border-radius: 9px;
   letter-spacing: 15%;
   margin-bottom: 10px;
 }
 
-/*celdas estilizadas para contratos*/
+/*celdas estilizadas para menú-contratos*/
 .celdaCon {
   text-align: justify;
   font-size: 13px;
@@ -239,7 +265,7 @@ footer {
 .aCon {
   background: transparent;
   text-align: justify;
-  background-color: #2c73b681;
+  background-color: #4c92d347;
   border-radius: 9px;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
@@ -281,4 +307,17 @@ footer {
 
 .aClaus:hover {
   background: transparent;
+}
+
+/*Estilo para clausulas de waivers*/
+.celdaClausula {
+  text-align: justify;
+  font-size: smaller;
+  padding: 6px;
+  background: #2c73b628;
+  border-radius: 8px;
+  color: #03497a;
+  border: 1px solid #2c73b6;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
 }

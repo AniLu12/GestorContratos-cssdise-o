@@ -56,6 +56,8 @@
   justify-self: start;  /*Justificado al inicio, para evitar que el contenido se autoajuste si es muy pequeño*/
   width: 97%;
   margin-top: 40px;
+  box-shadow: 0 4px 8px #3086d751; /*Agregue profundida al box*/
+  border-radius: 9px;
 }
 
 
@@ -75,6 +77,38 @@
   margin-top: 40px;
 }
 
+/*Caja con resultado de búsquedas de contratos*/
+.boxWaiver {
+  display: grid;
+  grid: 2;
+  overflow-y: auto;
+  grid-template-rows: auto, 1fr;
+  grid-template-columns: repeat(3, 1fr); 
+  padding: 8px;
+  max-height: calc(100vh - 200px);
+  row-gap: 0px;         /*Sin espacio entre filas*/
+  column-gap: 0px;      /*Sin espacio entre columnas*/
+  align-self: start;    /*Se alinea al inicio*/
+  justify-self: start;  /*Justificado al inicio, para evitar que el contenido se autoajuste si es muy pequeño*/
+  width: 97%;
+  margin-top: 40px;
+  box-shadow: 0 4px 8px #3086d751; /*Agregue profundida al box*/
+  border-radius: 9px;
+}
+
+.boxEncabezadoWaiver {
+  grid-column: 1 / -1;  /*para que ocupe todas las columnas*/
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  grid-row: 1;
+  grid-template-columns: 2fr 1fr;
+  padding: 5px;
+  background: transparent;
+  border: 1px solid #2c73b6;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
 
 /*Mensaje de que no encontró resultados*/
 .warEmpty{
@@ -135,6 +169,7 @@ select {
   background-color: #03497a;
   color: #ffffff;
   align-items: center;
+  justify-content: center;
   border: 2px solid #03487ac5;
   border-radius: 8px;
   padding: 6px 10px;
@@ -167,6 +202,7 @@ option {
   background-color: #ffffff;
   color: #03487ac5;
   align-items: center;
+  justify-content: center;
   border-radius: 8px;
   padding: 6px 10px;
   font-size: 12px;
