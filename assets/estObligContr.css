@@ -15,14 +15,16 @@
   top: 0;
   background: #ffffff;
   display: grid;
+  overflow-x: auto;
   grid-row: 1;
-  grid-template-columns: 1fr 1fr 2fr 1fr 1fr 2fr 1fr 1fr;
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  /**grid-template-rows: auto auto auto auto auto;**/
   gap: 10px;
-  margin: -20px;
+  margin: 0px;
   padding: 0.75rem;
   box-shadow: 0 4px 6px #2c73b62b;
   border-radius: 9px;
+  z-index: 10; /*posicionado encima de lo demás*/
 }
 
 /*Caja con resultado de búsquedas de obligaciones*/
@@ -254,4 +256,5 @@ option {
 .posbotSearch{
   grid-column: 3 / span 4;
   grid-row: 6 / span 1;
+
 }
