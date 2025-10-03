@@ -216,15 +216,22 @@ footer {
 
 /*Estilos para las celdas y encabezados de las tablas (excepto las celdas de clausulas y contratos)*/
 .encabezado {
-  background: transparent;
+  /*modificacion de la posicion para que se mantenga en el lugar y solo se muevan los
+    datos de la tabla*/
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   text-align: center;
   font-size: 0.8rem;
-  padding: 6px;
+  padding: 10px;
   color: #03497a;
   border: 1px solid #2c73b6;
+  box-shadow: 0 4px 6px #2c73b62b;
+  border-radius: 2px;
 }
 
 .celda {
@@ -320,4 +327,5 @@ footer {
   border: 1px solid #2c73b6;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
+
 }
